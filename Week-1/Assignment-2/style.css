@@ -1,0 +1,170 @@
+/* Reset CSS */
+
+* {
+  box-sizing: border-box;
+  font-family: Times New Roman;
+/*   border: 2px solid red; */
+}
+
+.nav{
+  max-width: 1200px;
+  align-items: center;
+  margin: auto;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Navigation */
+
+#topbar {
+  background-color: lightgray;
+  height: 50px;
+}
+
+.logo {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+}
+
+#menu {
+  float: right;
+}
+
+#menu a {
+  margin: 0px 20px;
+  border: 2px solid transparent;
+  color: black;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.menu_button  {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-right: 20px;
+	font-size: 40px;
+	font-weight: 900;
+	line-height: 60px;
+	color: grey;
+	background: transparent;
+	border: none;
+}
+
+#banner {
+  height: 200px;
+  text-align: center;
+  padding-top: 40px;
+  background-color: lightblue;
+  background-position: center;
+}
+
+/* Main Content */
+
+.title {
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows:250px 250px;
+  grid-gap: 50px 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.item1, .item2, .item3, .item4 {
+  background: SlateGrey;
+  width: 500px;
+  height: 250px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  background-color: lightblue;
+  width: 150px;
+  height: 30px;
+  margin: 10px auto;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  #menu {
+    display: none;
+  }
+
+  .section {
+    border: 0px 100px;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .item1, .item2, .item3, .item4 {
+    background: SlateGrey;
+    max-width: 80%;
+    height: 250px;
+    margin-bottom: 30px;
+
+  }
+
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+   #menu {
+    display: none;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .item1, .item2, .item3, .item4 {
+    background: SlateGrey;
+    max-width: 40%;
+    height: 250px;
+    margin: 0px 25px 50px 25px;
+  }
+  
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .menu_button  {
+    display: none;
+  }
+  
+    .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .item1, .item2, .item3, .item4 {
+    background: SlateGrey;
+    max-width: 40%;
+    height: 250px;
+    margin: 0px 25px 50px 25px;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .menu_button  {
+    display: none;
+  }
+}
