@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      var url = "http://localhost:3000/trackName";
+      function sendMyName() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("spnName").innerHTML = this.responseText;
+            window.location.href = "http://localhost:3000/myName";
+          }
+        };
+        var getName = document.getElementById("sendName").value;
+        var sendString = "?name=" + getName;
+        xhttp.open("GET", url + sendString, true);
+        xhttp.send();
+      }
+    </script>
+  </head>
+
+  <body>
+    <input id="sendName" type="text" value="" />
+    <input type="submit" value="Submit" onclick="sendMyName();" />
+    <br />
+    <span id="spnName"> </span>
+  </body>
+</html>

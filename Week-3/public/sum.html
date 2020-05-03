@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      var url = "http://localhost:3000/getData";
+      function sendMyNum() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("spnNum").innerHTML = this.responseText;
+          }
+        };
+        var getNum = document.getElementById("sendNum").value;
+        var sendString = "?number=" + getNum;
+        xhttp.open("GET", url + sendString, true);
+        xhttp.send();
+      }
+    </script>
+  </head>
+  <body>
+    <input id="sendNum" type="text" value="" />
+    <input type="button" value="Click" onclick="sendMyNum();" />
+    <br />
+    <span id="spnNum"> </span>
+  </body>
+</html>
